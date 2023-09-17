@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Brygada 1918', serif;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    color: #000;
+}
+.btn-outline-dark {
+    border: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+nav#navbar .wrapper {
+    background-color: #FFF;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav#navbar .wrapper .brand {
+    margin-top: 20px;
+}
+nav#navbar .wrapper .brand a {
+    font-family: 'Brygada 1918', serif;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+nav#navbar .wrapper .btn_toggle {
+    display: none;
+}
+
+nav#navbar .wrapper ul {
+    padding-left: 0;
+    padding: 10px;
+}
+nav#navbar .wrapper ul li {
+    list-style: none;
+    display: block;
+    float: left;
+}
+nav#navbar .wrapper ul li:not(:last-child) {
+    margin-right: 10px;
+}
+nav#navbar .wrapper ul li a {
+    padding: 10px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    display: block;
+}
+nav#navbar .wrapper ul li.active a {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: underline;
+    font-weight: 700;
+}
+nav#navbar .wrapper ul li a:hover {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: underline;
+}
+
+.thumbnail-wrapper {
+    position: relative;
+}
+.thumbnail-wrapper.thumb_1_by_1 {
+    padding-bottom: 100%;
+}
+img {
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+#hero .wrapper {
+    display: grid;
+    grid-template-columns: 200px auto;
+    margin: 20px 0;
+    padding: 0 10px;
+}
+#hero .wrapper .thumbnail {
+    width: 180px;
+}
+#hero .wrapper .info {
+    padding: 0 10px;
+}
+
+@media screen and (max-width: 500px) {
+    nav#navbar .wrapper .brand {
+        margin-top: 0;
+    }
+    nav#navbar .wrapper {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 20px;
+        height: 60px;
+    }
+    nav#navbar .wrapper .btn_toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        position: relative;
+        background: #FFF;
+        border: 0;
+    }
+    nav#navbar .wrapper .btn_toggle span {
+        height: 3px;
+        width: 30px;
+        background: rgba(0, 0, 0, 0.7);
+        display: block;
+    }
+    nav#navbar .wrapper .btn_toggle span:not(:last-child) {
+        margin-bottom: 5px;
+    }
+    nav#navbar .wrapper ul {
+        transition: 0.3s ease;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 9;
+        background: #FFF;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        display: none;
+    }
+    nav#navbar .wrapper ul.show {
+        display: block;
+    }
+    nav#navbar .wrapper ul {
+        width: 100%;
+    }
+    nav#navbar .wrapper ul li {
+        clear: both;
+        width: 100%;
+    }
+    nav#navbar .wrapper ul li:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    }
+    nav#navbar .wrapper ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    #hero .wrapper .profile {
+        padding: 0 10px;
+    }
+    #hero .wrapper {
+        grid-template-columns: auto;
+    }
+}
